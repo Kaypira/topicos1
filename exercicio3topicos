@@ -1,0 +1,27 @@
+
+import javax.swing.JOptionPane;
+
+public class AgenciaAutomoveis {
+
+    public static void main(String[] args) {
+        
+        String marca = JOptionPane.showInputDialog("Informe a marca do automóvel:");
+        String modelo = JOptionPane.showInputDialog("Informe o modelo do automóvel:");
+        String cor = JOptionPane.showInputDialog("Informe a cor do automóvel:");
+        double preco = Double.parseDouble(JOptionPane.showInputDialog("Informe o preço do automóvel:"));
+        boolean estadoMotor = Boolean.parseBoolean(JOptionPane.showInputDialog("Informe o estado do motor (true para ligado, false para desligado):"));
+
+        Automovel automovel = new Automovel(marca, modelo, cor, preco, estadoMotor);
+
+        String resultado = "Automóvel cadastrado com sucesso!\n
+";
+        resultado += "Marca: " + automovel.getMarca() + "\n";
+        resultado += "Modelo: " + automovel.getModelo() + "\n";
+        resultado += "Cor: " + automovel.getCor() + "\n";
+        resultado += "Preço: " + automovel.getPreco() + "\n";
+        resultado += "Estado do Motor: " + (automovel.isEstadoMotor() ? "Ligado" : "Desligado");
+
+        JOptionPane.showMessageDialog(null, resultado);
+    }
+
+}
