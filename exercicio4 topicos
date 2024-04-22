@@ -1,0 +1,30 @@
+
+import javax.swing.JOptionPane;
+
+public class AgenciaAutomoveis {
+    
+    public static void main(String[] args) {
+        int quantidadeAutomoveis = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de automóveis a cadastrar:"));
+        
+        for (int i = 0; i < quantidadeAutomoveis; i++) {
+            String marca = JOptionPane.showInputDialog("Informe a marca do automóvel:");
+            String modelo = JOptionPane.showInputDialog("Informe o modelo do automóvel:");
+            String cor = JOptionPane.showInputDialog("Informe a cor do automóvel:");
+            int anoFabricacao = Integer.parseInt(JOptionPane.showInputDialog("Informe o ano de fabricação do automóvel:"));
+            double preco = Double.parseDouble(JOptionPane.showInputDialog("Informe o preço do automóvel:"));
+            boolean estadoDoMotor = JOptionPane.showInputDialog("Informe o estado do motor (Ligado ou Desligado):").equalsIgnoreCase("ligado") ? true : false;
+            
+            Automovel automovel = new Automovel(marca, modelo, cor, anoFabricacao, preco, estadoDoMotor);
+            
+            String resultado = "Informações do Automóvel:\n";
+            resultado += "Marca: " + automovel.getMarca() + "\n";
+            resultado += "Modelo: " + automovel.getModelo() + "\n";
+            resultado += "Cor: " + automovel.getCor() + "\n";
+            resultado += "Ano de Fabricação: " + automovel.getAnoFabricacao() + "\n";
+            resultado += "Preço: " + automovel.getPreco() + "\n";
+            resultado += "Estado do Motor: " + (automovel.isEstadoDoMotor() ? "Ligado" : "Desligado") + "\n";
+            
+            JOptionPane.showMessageDialog(null, resultado, "Automóvel Cadastrado", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+}
