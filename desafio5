@@ -1,0 +1,63 @@
+// SuperClasse Figura
+public abstract class Figura {
+    public abstract double calcularArea();
+}
+
+// SubClasse Quadrado
+public class Quadrado extends Figura {
+    private double lado;
+
+    public Quadrado(double lado) {
+        this.lado = lado;
+    }
+
+    @Override
+    public double calcularArea() {
+        return lado * lado;
+    }
+}
+
+// SubClasse Retangulo
+public class Retangulo extends Figura {
+    private double base;
+    private double altura;
+
+    public Retangulo(double base, double altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+
+    @Override
+    public double calcularArea() {
+        return base * altura;
+    }
+}
+
+// SubClasse Triangulo
+public class Triangulo extends Figura {
+    private double base;
+    private double altura;
+
+    public Triangulo(double base, double altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+
+    @Override
+    public double calcularArea() {
+        return (base * altura) / 2;
+    }
+}
+
+// Classe Geometria
+public class Geometria {
+    public static void main(String[] args) {
+        Quadrado quadrado = new Quadrado(5);
+        Retangulo retangulo = new Retangulo(4, 6);
+        Triangulo triangulo = new Triangulo(3, 4);
+
+        System.out.println("Área do Quadrado: " + quadrado.calcularArea());
+        System.out.println("Área do Retangulo: " + retangulo.calcularArea());
+        System.out.println("Área do Triangulo: " + triangulo.calcularArea());
+    }
+}
