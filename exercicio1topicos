@@ -1,0 +1,32 @@
+public Automovel() {
+    this.marca = "Ford";
+    this.modelo = "Fiesta";
+    this.ano = 2020;
+    this.estadoMotor = false;
+}
+
+public void ligarMotor() {
+    this.estadoMotor = true;
+}
+
+public void desligarMotor() {
+    this.estadoMotor = false;
+}
+
+public void imprimirInformacoes() {
+    String estado = this.estadoMotor ? "Ligado" : "Desligado";
+    String informacoes = "Marca: " + this.marca + "\nModelo: " + this.modelo + "\nAno: " + this.ano + "\nEstado do Motor: " + estado;
+    JOptionPane.showMessageDialog(null, informacoes, "Informações do Automóvel", JOptionPane.INFORMATION_MESSAGE);
+}
+
+public static void main(String[] args) {
+    Automovel automovel = new Automovel();
+
+    automovel.imprimirInformacoes();
+
+    automovel.ligarMotor();
+    automovel.imprimirInformacoes();
+
+    automovel.desligarMotor();
+    automovel.imprimirInformacoes();
+}
