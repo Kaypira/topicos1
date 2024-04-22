@@ -1,0 +1,20 @@
+```java
+import javax.swing.JOptionPane;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Automovel meuCarro = new Automovel("ABC-1234", "Ford", "Fiesta", 2019, true);
+        
+        String estadoMotor = meuCarro.isMotorLigado() ? "Ligado" : "Desligado";
+        
+        String mensagem = "Placa: " + meuCarro.getPlaca() + "\n" +
+                          "Marca: " + meuCarro.getMarca() + "\n" +
+                          "Modelo: " + meuCarro.getModelo() + "\n" +
+                          "Ano: " + meuCarro.getAno() + "\n" +
+                          "Estado do Motor: " + estadoMotor;
+        
+        JOptionPane.showMessageDialog(null, mensagem, "Informações do Automóvel", JOptionPane.INFORMATION_MESSAGE);
+    }
+}
+```
